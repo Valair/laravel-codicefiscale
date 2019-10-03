@@ -26,8 +26,8 @@ class CodiceFiscaleGenerator
     ];
 
     protected $_mesi = [
-        1  => 'A',  2 => 'B',  3 => 'C',  4 => 'D',  5 => 'E',
-        6  => 'H',  7 => 'L',  8 => 'M',  9 => 'P', 10 => 'R',
+        1  => 'A', 2 => 'B', 3 => 'C', 4 => 'D', 5 => 'E',
+        6  => 'H', 7 => 'L', 8 => 'M', 9 => 'P', 10 => 'R',
         11 => 'S', 12 => 'T',
     ];
 
@@ -195,7 +195,7 @@ class CodiceFiscaleGenerator
 
         $mm = $this->_mesi[$mese];
 
-        $gg = (strtoupper($this->sesso) == 'M') ? $giorno : $giorno + 40;
+        $gg = (strtoupper($this->sesso) === 'M') ? $giorno : $giorno + 40;
         $gg = str_pad($gg, 2, '0', STR_PAD_LEFT);
 
         return $aa.$mm.$gg;

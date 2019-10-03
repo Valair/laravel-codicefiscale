@@ -36,7 +36,7 @@ class CodiceFiscale
 
     public function __construct(CityDecoderInterface $cityDecoder = null)
     {
-        $this->cityDecoder = isset($cityDecoder) ? $cityDecoder : new ItalianCitiesStaticList();
+        $this->cityDecoder = $cityDecoder ?? new ItalianCitiesStaticList();
         $this->tabReplacementOmocodia = [6, 7, 9, 10, 12, 13, 14];
 
         $this->tabDecodeOmocodia = [

@@ -121,8 +121,8 @@ class CheckForWrongCode implements Check
         $odd = $this->tabOddChars[$cfArray[14]];
 
         for ($i = 0; $i < 13; $i += 2) {
-            $odd = $odd + $this->tabOddChars[$cfArray[$i]];
-            $even = $even + $this->tabEvenChars[$cfArray[$i + 1]];
+            $odd += $this->tabOddChars[$cfArray[$i]];
+            $even += $this->tabEvenChars[$cfArray[$i + 1]];
         }
 
         if (!($this->tabControlCode[($even + $odd) % 26] === $cfArray[15]) || (!$this->checkRegex($code))) {
