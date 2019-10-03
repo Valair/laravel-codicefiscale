@@ -4,7 +4,7 @@ use Carbon\Carbon;
 use robertogallea\LaravelCodiceFiscale\CodiceFiscale;
 use robertogallea\LaravelCodiceFiscale\Exceptions\CodiceFiscaleGenerationException;
 
-class CodiceFiscaleGenerationTest extends PHPUnit_Framework_TestCase
+class CodiceFiscaleGenerationTest extends \PHPUnit\Framework\TestCase
 {
     public function testNullFirstName()
     {
@@ -14,7 +14,7 @@ class CodiceFiscaleGenerationTest extends PHPUnit_Framework_TestCase
         $birth_place = 'F205';
         $gender = 'M';
 
-        $this->setExpectedException(TypeError::class);
+        $this->expectException(TypeError::class);
         CodiceFiscale::generate($first_name, $last_name, $birth_date, $birth_place, $gender);
     }
 
@@ -26,7 +26,7 @@ class CodiceFiscaleGenerationTest extends PHPUnit_Framework_TestCase
         $birth_place = 'F205';
         $gender = 'M';
 
-        $this->setExpectedException(CodiceFiscaleGenerationException::class);
+        $this->expectException(CodiceFiscaleGenerationException::class);
         CodiceFiscale::generate($first_name, $last_name, $birth_date, $birth_place, $gender);
     }
 
@@ -38,7 +38,7 @@ class CodiceFiscaleGenerationTest extends PHPUnit_Framework_TestCase
         $birth_place = 'F205';
         $gender = 'M';
 
-        $this->setExpectedException(TypeError::class);
+        $this->expectException(TypeError::class);
         CodiceFiscale::generate($first_name, $last_name, $birth_date, $birth_place, $gender);
     }
 
@@ -50,7 +50,7 @@ class CodiceFiscaleGenerationTest extends PHPUnit_Framework_TestCase
         $birth_place = 'F205';
         $gender = 'M';
 
-        $this->setExpectedException(CodiceFiscaleGenerationException::class);
+        $this->expectException(CodiceFiscaleGenerationException::class);
         CodiceFiscale::generate($first_name, $last_name, $birth_date, $birth_place, $gender);
     }
 
@@ -62,7 +62,7 @@ class CodiceFiscaleGenerationTest extends PHPUnit_Framework_TestCase
         $birth_place = 'F205';
         $gender = 'M';
 
-        $this->setExpectedException(InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
         CodiceFiscale::generate($first_name, $last_name, $birth_date, $birth_place, $gender);
     }
 
@@ -74,7 +74,7 @@ class CodiceFiscaleGenerationTest extends PHPUnit_Framework_TestCase
         $birth_place = 'AB123';
         $gender = 'M';
 
-        $this->setExpectedException(InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
         CodiceFiscale::generate($first_name, $last_name, $birth_date, $birth_place, $gender);
     }
 
