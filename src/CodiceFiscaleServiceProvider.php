@@ -17,7 +17,11 @@ class CodiceFiscaleServiceProvider extends ServiceProvider
      */
     public function boot(Repository $config, CodiceFiscale $codiceFiscale)
     {
-        $this->publishConfig();
+        $configPath = $this->packagePath('config/codicefiscale.php');
+        $this->publishes([
+            $configPath => config_path('codicefiscale.php'),
+        ], 'config');
+
         $this->registerValidator($codiceFiscale);
     }
 
@@ -28,6 +32,9 @@ class CodiceFiscaleServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $configPath = $this->packagePath('config/codicefiscale.php');
+        $this->mergeConfigFrom($configPath, 'codicefiscale');
+
         $this->app->singleton(CodiceFiscale::class, function (Container $app) {
             return new CodiceFiscale(
                 new $app['config']['codicefiscale.city-decoder']()
@@ -72,19 +79,8 @@ class CodiceFiscaleServiceProvider extends ServiceProvider
         });
     }
 
-    private function publishConfig()
-    {
-        $configPath = $this->packagePath('config/codicefiscale.php');
-
-        $this->publishes([
-            $configPath => config_path('codicefiscale.php'),
-        ], 'config');
-
-        $this->mergeConfigFrom($configPath, 'codicefiscale');
-    }
-
     private function packagePath($path)
     {
-        return __DIR__."/../$path";
+        return dirname(__DIR__)."/$path";
     }
 }
