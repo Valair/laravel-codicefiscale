@@ -258,7 +258,7 @@ class CodiceFiscaleGenerator
         return $this->_parametri[$key];
     }
 
-    public function _isset($key)
+    public function __isset($key)
     {
         return isset($this->_parametri[$key]);
     }
