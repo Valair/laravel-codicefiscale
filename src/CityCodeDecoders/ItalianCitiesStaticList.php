@@ -4,7 +4,7 @@ namespace robertogallea\LaravelCodiceFiscale\CityCodeDecoders;
 
 class ItalianCitiesStaticList implements CityDecoderInterface
 {
-    public const list = [
+    public const LIST = [
         'A001' => 'ABANO TERME',
         'A004' => 'ABBADIA CERRETO',
         'A005' => 'ABBADIA LARIANA',
@@ -8203,6 +8203,6 @@ class ItalianCitiesStaticList implements CityDecoderInterface
 
     public static function getList()
     {
-        return self::list;
+        return self::LIST;
     }
 }
