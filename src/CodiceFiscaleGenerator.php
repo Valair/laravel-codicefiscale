@@ -220,7 +220,7 @@ class CodiceFiscaleGenerator
     {
         $code = str_split($codice);
         $sum = 0;
-        for ($i = 1; $i <= count($code); $i++) {
+        for ($i = 1, $iMax = count($code); $i <= $iMax; $i++) {
             $cifra = $code[$i - 1];
             $sum += ($i % 2) ? $this->_dispari[$cifra] : $this->_pari[$cifra];
         }
