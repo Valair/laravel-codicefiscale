@@ -1,0 +1,20 @@
+language: php
+
+php:
+  - 7.2
+  - 7.3
+
+env:
+  matrix:
+    - COMPOSER_FLAGS="--prefer-lowest"
+    - COMPOSER_FLAGS=""
+
+install:
+  - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --no-suggest
+
+script:
+  - composer test
+
+cache:
+  directories:
+    - $HOME/.composer/cache

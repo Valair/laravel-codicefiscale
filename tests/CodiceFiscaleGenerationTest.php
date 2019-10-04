@@ -1,10 +1,11 @@
 <?php
 
 use Carbon\Carbon;
+use Orchestra\Testbench\TestCase;
 use robertogallea\LaravelCodiceFiscale\CodiceFiscale;
 use robertogallea\LaravelCodiceFiscale\Exceptions\CodiceFiscaleGenerationException;
 
-class CodiceFiscaleGenerationTest extends \PHPUnit\Framework\TestCase
+class CodiceFiscaleGenerationTest extends TestCase
 {
     public function testNullFirstName()
     {

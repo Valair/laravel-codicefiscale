@@ -1,2 +1,7 @@
-/.idea/*
-/vendor/*
+vendor
+clover.xml
+coverage
+.php_cs.cache
+.idea
+.DS_Store
+.phpunit.result.cache

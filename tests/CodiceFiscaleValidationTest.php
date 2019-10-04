@@ -1,10 +1,11 @@
 <?php
 
+use Orchestra\Testbench\TestCase;
 use robertogallea\LaravelCodiceFiscale\CityCodeDecoders\InternationalCitiesStaticList;
 use robertogallea\LaravelCodiceFiscale\CodiceFiscale;
 use robertogallea\LaravelCodiceFiscale\Exceptions\CodiceFiscaleValidationException;
 
-class CodiceFiscaleValidationTest extends \PHPUnit\Framework\TestCase
+class CodiceFiscaleValidationTest extends TestCase
 {
     public function testCodiceFiscaleNull()
     {
